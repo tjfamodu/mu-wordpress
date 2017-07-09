@@ -1,0 +1,100 @@
+/* Declare Fonts */
+// Sans Serif
+@import url(//fonts.googleapis.com/css?family=Roboto:400,400italic,700);
+
+//Serif
+@import url(//fonts.googleapis.com/css?family=Roboto+Slab);
+
+@import url("//hello.myfonts.net/count/3173f9");
+
+@font-face {font-family: 'BrandonTextWeb-Bold';src: url('//get.rendia.com/webfonts/3173F9_2_0.eot');src: url('//get.rendia.com/webfonts/3173F9_2_0.eot?#iefix') format('embedded-opentype'),url('//get.rendia.com/webfonts/3173F9_2_0.woff2') format('woff2'),url('//get.rendia.com/webfonts/3173F9_2_0.woff') format('woff'),url('//get.rendia.com/webfonts/3173F9_2_0.ttf') format('truetype'),url('//get.rendia.com/webfonts/3173F9_2_0.svg#wf') format('svg');}
+
+@font-face {font-family: 'BrandonTextWeb-Regular';src: url('//get.rendia.com/webfonts/3173F9_8_0.eot');src: url('//get.rendia.com/webfonts/3173F9_8_0.eot?#iefix') format('embedded-opentype'),url('//get.rendia.com/webfonts/3173F9_8_0.woff2') format('woff2'),url('//get.rendia.com/webfonts/3173F9_8_0.woff') format('woff'),url('//get.rendia.com/webfonts/3173F9_8_0.ttf') format('truetype'),url('//get.rendia.com/webfonts/3173F9_8_0.svg#wf') format('svg');}
+
+$color-bright-text: #533872;
+
+/* Apply Fonts */
+$body-font-family: "BrandonTextWeb-Regular", "Roboto";
+$body-font-weight: 400;
+
+$header-font-family: "BrandonTextWeb-Bold", "Roboto Slab";
+$header-font-weight: 400;
+legend {
+  font-family: "BrandonTextWeb-Bold", "Roboto Slab";
+  font-weight: 400;
+}
+
+body {
+  h1 {
+    font-size: 4rem;
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 3rem 0 1rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #533872;
+  }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+  h5 { font-size: 1.1rem; }
+  h6 { font-size: 1rem; }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 { color: #533872; }
+  button,
+  a.button,
+  .sub-nav a { text-transform: uppercase; }
+  .sub-nav dt {
+    text-transform: none;
+    font-weight: 700;
+  }
+  kbd {
+  	padding: .1em .6em;
+  	white-space: nowrap;
+  	margin: 0 .1em;
+  	border: 1px solid #ccc;
+  	background-color: #fafafa;
+    border-bottom-color: #aaa;
+  	border-radius: 3px;
+  	display: inline-block;
+    font-family: monospace;
+  	box-shadow: 0 0.5px 4px rgba(100, 100, 100, 0.2);
+  }
+  ol li {
+      list-style-type: none;
+      counter-increment: list;
+      position: relative;
+      padding-left: 1rem;
+      p {
+        margin: 0;
+      }
+      &:after {
+        content: counter(list) ".";
+        position: absolute;
+        top: 0;
+        left: -1.5em;
+        width: 2em;
+        text-align: right;
+        font-family: "BrandonTextWeb-Bold", "Roboto Slab", serif;
+        color: $color-bright-text;
+      }
+  }
+  dl dt {
+    margin: 0;
+  }
+}
+
+article {
+  ol,
+  ul,
+  p {
+    margin: 0 auto;
+  }
+  li {
+    margin-top: 0.5rem;
+  }
+}

@@ -1,0 +1,35 @@
+=== WP Version ===
+WordPress 4.0
+
+=== DB Connection Details - Production ===
+wp core config --dbname=corporate_wordpress --dbuser=new_corp --dbpass=WuLINaM2ve --dbhost=mysql.cutsfctzx7o4.us-east-1.rds.amazonaws.com
+
+=== DB Connection Details - Staging (Not set yet) ===
+wp core config --dbname=[empty] --dbuser=[empty] --dbpass=[empty] --dbhost=[empty]
+
+
+// For develop please make sure to change the fields [empty] to your own
+// local DB setup, you will need a local db installation of mysql already setup
+
+=== DB Connection Details - Develop ===
+wp core config --dbname=[empty] --dbuser=[empty] --dbpass=[empty] --dbhost=[empty]
+
+// e.g. (with local mysql config used by Andres)
+
+=== DB Connection Details - Develop ===
+wp core config --dbname=em_wordpress --dbuser=livecano --dbpass=password --dbhost=localhost
+
+
+=== Plugins ===
+wordpress-importer
+disqus comment system
+hello dolly
+jetpack by wordpress.com
+Responsive lightbox by dFactory
+Nelio featured posts
+Nelio A/B testing
+wp user avatar
+wordpress seo by yoast
+
+maybe if db info should match dev/staging in production?
+wp-migrate-db-pro

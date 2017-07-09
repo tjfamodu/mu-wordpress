@@ -5,6 +5,18 @@
 environments:
 - name: test
   ### Attributes for the ECS container instances
+  vpcTarget:
+    vpcID: vpc-08f2b96c
+    ecsSubnetIds:
+      - subnet-b6cc1dee
+      - subnet-12a66a38
+      - subnet-f748f781
+      - subnet-ed1d87d0
+    elbSubnetIds:
+      - subnet-b6cc1dee
+      - subnet-12a66a38
+      - subnet-f748f781
+      - subnet-ed1d87d0
   cluster:
     #### Name of EC2 keypair to associate with ECS container instances.
     #### Launches bastion host if defined.
@@ -14,11 +26,28 @@ environments:
     #### The instance type to use for the ECS container instances
     #### (default: t2.micro)
     instanceType: t2.micro
-
+  loadBalancer:
+    certificate: 	a18a3e55-1771-4607-99a2-6151bf877b29
 - name: prod
   cluster:
     keyName: echo-key
     instanceType: t2.small
+
+  vpcTarget:
+    vpcID: vpc-08f2b96c
+    ecsSubnetIds:
+      - subnet-b6cc1dee
+      - subnet-12a66a38
+      - subnet-f748f781
+      - subnet-ed1d87d0
+    elbSubnetIds:
+      - subnet-b6cc1dee
+      - subnet-12a66a38
+      - subnet-f748f781
+      - subnet-ed1d87d0
+
+  loadBalancer:
+    certificate: 	a18a3e55-1771-4607-99a2-6151bf877b29
 
 ## See https://github.com/stelligent/mu/wiki/Services
 service:
@@ -50,7 +79,9 @@ service:
   ### See https://github.com/stelligent/mu/wiki/Databases
   database:
     #### Name of database to create on RDS instance
-    name: muwp
+    name: rendiawp
+    instanceClass: db.t2.small
+    masterUsername: eyemag
 
     #### RDS engine to use
     #### (default: aurora)
@@ -71,7 +102,7 @@ service:
     #### in wp-config.php
     WORDPRESS_DEBUG:
       test: 'true'
-      prod: 
+      prod:
 
   ### See https://github.com/stelligent/mu/wiki/Pipelines
   pipeline:
